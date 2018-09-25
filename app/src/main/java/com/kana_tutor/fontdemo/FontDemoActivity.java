@@ -42,9 +42,11 @@ public class FontDemoActivity extends AppCompatActivity {
 
     private static class FontInfo {
         final String name;
-        final int [] fontInfo;
-        private FontInfo(String name, int[] fontInfo) {
-            this.name = name; this.fontInfo = fontInfo;
+        final int fontResourceId, fontStyle;
+        private FontInfo(String name, int fontResourceId, int fontStyle) {
+            this.name = name;
+            this.fontResourceId = fontResourceId;
+            this.fontStyle = fontStyle;
         }
     }
     private EditText fontEditText;
@@ -56,23 +58,23 @@ public class FontDemoActivity extends AppCompatActivity {
     private static final Map<String, FontInfo> fontMap = new HashMap<>();
     static {
         fontMap.put("Takao NORMAL", new FontInfo("Takao NORMAL",
-            new int[]{R.font.takao_gothic_regular, Typeface.NORMAL}));
+            R.font.takao_gothic_regular, Typeface.NORMAL));
         fontMap.put("Takao BOLD", new FontInfo("Takao BOLD",
-            new int[]{R.font.takao_gothic_regular, Typeface.BOLD}));
+            R.font.takao_gothic_regular, Typeface.BOLD));
         fontMap.put("Takao ITALIC", new FontInfo("Takao ITALIC",
-            new int[]{R.font.takao_gothic_regular, Typeface.ITALIC}));
+            R.font.takao_gothic_regular, Typeface.ITALIC));
         fontMap.put("HanaMinA NORMAL", new FontInfo("HanaMinA NORMAL",
-            new int[]{R.font.hana_min_a_regular, Typeface.NORMAL}));
+            R.font.hana_min_a_regular, Typeface.NORMAL));
         fontMap.put("HanaMinA BOLD", new FontInfo("HanaMinA NORMAL",
-            new int[]{R.font.hana_min_a_regular, Typeface.BOLD}));
+            R.font.hana_min_a_regular, Typeface.BOLD));
         fontMap.put("HanaMinA ITALIC", new FontInfo("HanaMinA ITALIC",
-            new int[]{R.font.hana_min_a_regular, Typeface.ITALIC}));
+            R.font.hana_min_a_regular, Typeface.ITALIC));
         fontMap.put("DroidSansJapanese NORMAL", new FontInfo("DroidSansJapanese NORMAL" ,
-            new int[]{R.font.droid_sans_japanese_regular, Typeface.NORMAL}));
+            R.font.droid_sans_japanese_regular, Typeface.NORMAL));
         fontMap.put("DroidSansJapanese BOLD", new FontInfo("DroidSansJapanese BOLD",
-            new int[]{R.font.droid_sans_japanese_regular, Typeface.BOLD}));
+            R.font.droid_sans_japanese_regular, Typeface.BOLD));
         fontMap.put("DroidSansJapanese ITALIC", new FontInfo("DroidSansJapanese ITALIC",
-            new int[]{R.font.droid_sans_japanese_regular, Typeface.ITALIC}));
+            R.font.droid_sans_japanese_regular, Typeface.ITALIC));
     }
     private static final List<String> fontNames;
     static {
@@ -97,7 +99,7 @@ public class FontDemoActivity extends AppCompatActivity {
         fontEditText = findViewById(R.id.font_edit_text);
         fontEditText.setTypeface(
                 ResourcesCompat.getFont(FontDemoActivity.this,
-                    currentFontInfo.fontInfo[0]), currentFontInfo.fontInfo[1]);
+                    currentFontInfo.fontResourceId), currentFontInfo.fontStyle);
         fontEditText.setText(fontDemoString);
         fontSelectButton =  findViewById(R.id.font_select_button);
         fontSelectButton.setText(currentFontInfo.name);
@@ -120,10 +122,10 @@ public class FontDemoActivity extends AppCompatActivity {
                 FontInfo info = fontMap.get(next);
                 myPrefs.edit().putString("currentFontName", next).apply();
                 Log.d(TAG, String.format(
-                    "Font resource:0x%08x:%d", info.fontInfo[0], info.fontInfo[1]));
+                    "Font resource:0x%08x:%d", info.fontResourceId, info.fontStyle));
                 fontEditText.setTypeface(
                     ResourcesCompat.getFont(FontDemoActivity.this
-                    , info.fontInfo[0]), info.fontInfo[1]);
+                    , info.fontResourceId), info.fontStyle);
                 fontSelectButton.setText(next);
             }
         });
