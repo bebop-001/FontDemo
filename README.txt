@@ -8,3 +8,7 @@ It has a button that toggles through the app installed fonts and a text view
 that allows the user to change the font demo string.
 
 As downloaded, 3 fonts are included: HanaMinA, Takao and DroidSansJapanese.
+
+Tue Sep 25 09:39:05 PDT 2018
+Added show of bold, normal, italic attributes for each fontl.
+
