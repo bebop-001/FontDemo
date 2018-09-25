@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="takao_font" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/takao_gothic_regular</item>
+    </style>
+    <style name="hana_min_a" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/hana_min_a_regular</item>
+    </style>
+
+
+</resources>

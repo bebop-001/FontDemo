@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FontDemoActivity">
+
+    <Button
+        android:id="@+id/font_select_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Takao" />
+
+    <EditText
+        android:id="@+id/font_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/font_select_button"
+        android:fontFamily="@font/takao_gothic"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:text="今日は皆さん"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>
