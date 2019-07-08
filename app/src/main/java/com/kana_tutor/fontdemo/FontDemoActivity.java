@@ -74,7 +74,9 @@ public class FontDemoActivity extends AppCompatActivity {
         fontMap.put("DroidSansJapanese BOLD", new FontInfo("DroidSansJapanese BOLD",
             R.font.droid_sans_japanese_regular, Typeface.BOLD));
         fontMap.put("DroidSansJapanese ITALIC", new FontInfo("DroidSansJapanese ITALIC",
-            R.font.droid_sans_japanese_regular, Typeface.ITALIC));
+                R.font.droid_sans_japanese_regular, Typeface.ITALIC));
+        fontMap.put("Lobster NORMAL", new FontInfo("Lobster Normal",
+                R.font.lobster, Typeface.NORMAL));
     }
     private static final List<String> fontNames;
     static {
